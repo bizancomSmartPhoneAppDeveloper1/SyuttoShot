@@ -11,6 +11,18 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *syuttoView;
+@property (weak, nonatomic) IBOutlet UIButton *secondBtn;
+@property (weak, nonatomic) IBOutlet UIButton *repeatBtn;
+
+@property AVAudioPlayer *countdown;
+
+@property BOOL Btnflag;
+@property BOOL Btnflag2;
+@property int Btnflag3;
+
+
 - (IBAction)startCamera:(id)sender;
+- (IBAction)tapMenuBtn:(UIButton *)sender;
 
 @end
