@@ -22,10 +22,6 @@
 		18BEF94C18EC139C006175C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF94A18EC139C006175C9 /* InfoPlist.strings */; };
 		18BEF94E18EC139C006175C9 /* SyuttoShotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF94D18EC139C006175C9 /* SyuttoShotTests.m */; };
 		18BEF95818EC1467006175C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95718EC1467006175C9 /* AVFoundation.framework */; };
-		18BEF95A18EC1475006175C9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95918EC1475006175C9 /* CoreVideo.framework */; };
-		18BEF95C18EC1481006175C9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95B18EC1481006175C9 /* CoreMedia.framework */; };
-		18BEF95E18EC1496006175C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95D18EC1496006175C9 /* QuartzCore.framework */; };
-		18BEF96018EC14AA006175C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95F18EC14AA006175C9 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BEF96018EC14AA006175C9 /* MobileCoreServices.framework in Frameworks */,
-				18BEF95E18EC1496006175C9 /* QuartzCore.framework in Frameworks */,
-				18BEF95C18EC1481006175C9 /* CoreMedia.framework in Frameworks */,
-				18BEF95A18EC1475006175C9 /* CoreVideo.framework in Frameworks */,
 				18BEF95818EC1467006175C9 /* AVFoundation.framework in Frameworks */,
 				18BEF92518EC139C006175C9 /* CoreGraphics.framework in Frameworks */,
 				18BEF92718EC139C006175C9 /* UIKit.framework in Frameworks */,
@@ -219,6 +211,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					18BEF91E18EC139C006175C9 = {
+						DevelopmentTeam = F6V5S453ZH;
+					};
 					18BEF93F18EC139C006175C9 = {
 						TestTargetID = 18BEF91E18EC139C006175C9;
 					};
@@ -396,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyuttoShot/SyuttoShot-Prefix.pch";
 				INFOPLIST_FILE = "SyuttoShot/SyuttoShot-Info.plist";
@@ -409,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyuttoShot/SyuttoShot-Prefix.pch";
 				INFOPLIST_FILE = "SyuttoShot/SyuttoShot-Info.plist";
@@ -476,6 +473,7 @@
 				18BEF95318EC139C006175C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BEF95418EC139C006175C9 /* Build configuration list for PBXNativeTarget "SyuttoShotTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +482,7 @@
 				18BEF95618EC139C006175C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

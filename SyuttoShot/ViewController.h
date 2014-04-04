@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-//追加したフレームワーク　AVFoundation.framework CoreVideo.framework CoreMedia.framework QuartzCore.framework MobileCoreService.framework
 
-@interface ViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface ViewController : UIViewController
 
-@property (strong, nonatomic) AVCaptureSession *session;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)startCamera:(id)sender;
 
 @end

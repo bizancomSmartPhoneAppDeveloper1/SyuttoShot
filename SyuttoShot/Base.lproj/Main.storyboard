@@ -20,31 +20,23 @@
                                 <rect key="frame" x="5" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="設定" id="QfE-gg-Ep3"/>
                                     <barButtonItem systemItem="flexibleSpace" id="MqJ-XJ-NJo"/>
-                                    <barButtonItem systemItem="camera" id="A7p-Zs-Ddm"/>
+                                    <barButtonItem systemItem="camera" id="A7p-Zs-Ddm">
+                                        <connections>
+                                            <action selector="startCamera:" destination="vXZ-lx-hvc" id="WZu-zG-srz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="hJj-iK-0Kb"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-vc-P8y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LXP-Wi-qzi" secondAttribute="bottom" id="0Ue-zE-UGl"/>
                             <constraint firstItem="LXP-Wi-qzi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="6vi-H3-FTT"/>
-                            <constraint firstItem="3Up-vc-P8y" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="bmU-wh-bsy"/>
-                            <constraint firstItem="LXP-Wi-qzi" firstAttribute="top" secondItem="3Up-vc-P8y" secondAttribute="bottom" id="dKy-Rs-5WE"/>
-                            <constraint firstItem="3Up-vc-P8y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="dWO-bQ-x8c"/>
-                            <constraint firstAttribute="trailing" secondItem="3Up-vc-P8y" secondAttribute="trailing" id="dhc-MP-d8S"/>
                             <constraint firstAttribute="trailing" secondItem="LXP-Wi-qzi" secondAttribute="trailing" constant="-5" id="lwe-yi-9es"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="image" destination="3Up-vc-P8y" id="ILk-Gh-bet"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
-
+@property (strong, nonatomic) AVCaptureSession *session;
+@property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 @end
 
 @implementation ViewController
@@ -19,47 +21,66 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //キャプチャセッションを作りスタートさせる
-    //カメラデバイスを取得する
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    //入力の初期化
-    NSError *error = nil;
-    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error]; //入力作成
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
     
-    //ビデオデータ出力作成
-    NSDictionary *settings = @{(id)kCVPixelBufferPixelFormatTypeKey:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]};
-    AVCaptureVideoDataOutput *dataOutput = [[AVCaptureVideoDataOutput alloc]init];
-    dataOutput.videoSettings = settings;
-    [dataOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
     
-    //セッション作成
+    [super viewWillAppear:animated];
+    [self configureCamera];
+
+}
+
+//カメラの設定
+-(BOOL)configureCamera{
+    NSError *error;
+    
+    //セッションを作成
+    if (self.session) {
+        [self.session stopRunning];
+        self.session = nil;
+    }
     self.session = [[AVCaptureSession alloc]init];
-    [self.session addInput:deviceInput];
-    [self.session addOutput:dataOutput];
-    self.session.sessionPreset = AVCaptureSessionPresetHigh;  //High?photo?
     
-    AVCaptureConnection *videoConnection = NULL;
+    //入力デバイス
+    AVCaptureDevice *captureDevice = nil;
+    NSArray *devices = [AVCaptureDevice devices];
     
-    //カメラの向きなどの設定
-    [self.session beginConfiguration];
-    
-    for ( AVCaptureConnection *connection in [dataOutput connections]) {
-        for ( AVCaptureInputPort *port in [connection inputPorts]) {
-            if ([[port mediaType] isEqual:AVMediaTypeVideo]) {
-                videoConnection = connection;
-            }
+    //背面カメラを見つける
+    for (AVCaptureDevice *device in devices) {
+        if (device.position==AVCaptureDevicePositionBack)
+        {
+            captureDevice = device;
         }
     }
-    if ([videoConnection isVideoOrientationSupported]) {
-        [videoConnection setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    }
-    
-    [self.session commitConfiguration];  //セッションの設定を確定する
-    
-    //セッションをスタートする
-    [self.session startRunning];  //終了はstopRunning
-    
+    //カメラが見つからなかった場合
+        if (captureDevice == nil) {
+            return  NO;
+        }
+        AVCaptureDeviceInput *deviceinput = [[AVCaptureDeviceInput alloc]initWithDevice:captureDevice error:&error];
+        if (error) {
+            return NO;
+        }
+        //静止画出力を作成
+        self.stillImageOutput = [[AVCaptureStillImageOutput alloc]init];
+        
+        //プレビュー用レイヤ
+        AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.session];
+        previewLayer.frame = self.view.bounds;
+        [self.view.layer addSublayer:previewLayer];
+    //セッションの設定
+    self.session.sessionPreset = AVCaptureSessionPresetPhoto;
+    [self.session addInput:deviceinput];
+    [self.session addOutput:self.stillImageOutput];
+        
+        //セッションの設定
+        [self.session startRunning];
+        
+        return YES;
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,47 +88,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
--(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
+//カメラボタン押時
+- (IBAction)startCamera:(id)sender {
     
+    AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     
-//    CVImageBufferRef buffer;
-//    buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-//    
-//    CVPixelBufferLockBaseAddress(buffer, 0);
-//    
-//    uint8_t * base;
-//    size_t width,height,bytesPerRow;
-//    base = CVPixelBufferGetBaseAddress(buffer);
-//    width = CVPixelBufferGetWidth(buffer);
-//    height = CVPixelBufferGetHeight(buffer);
-//    bytesPerRow = CVPixelBufferGetBytesPerRow(buffer);
-//    
-//    CGColorSpaceRef colorSpace;
-//    CGContextRef cgContext;
-//    colorSpace = CGColorSpaceCreateDeviceRGB();
-//    cgContext = CGBitmapContextCreate(base, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-//    CGColorSpaceRelease(colorSpace);
-//    
-//    
-//    CGImageRef cgImage;
-//    UIImage *image;
-//    cgImage = CGBitmapContextCreateImage(cgContext);
-//    image = [UIImage imageWithCGImage:cgImage scale:1.0f orientation:UIImageOrientationRight];
-//    CGImageRelease(cgImage);
-//    CGContextRelease(cgContext);
-//    
-//    
-//    CVPixelBufferUnlockBaseAddress(buffer, 0);
-//    
-//    
-//    _imageView.image = image;
-//    
-
+    //静止画を撮影
+    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection
+                                                       completionHandler:^(CMSampleBufferRef
+                                                                           imageDataSampleBuffer,NSError *error)
+     {
+         //エラーの場合
+         if (error) {return;}
+         
+         NSData *imagedata = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+         //画像のデータからUIImageを作成
+         UIImage *image = [UIImage imageWithData:imagedata];
+         //フォトライブラリに保存
+         UIImageWriteToSavedPhotosAlbum(image,self,@selector(image:didFinishSavingImageWithError:contetInfo:), nil);
+     }];
 }
-
-
-
-
+//フォトライブラリ保存時に呼ばれるメソッド
+-(void)image:(UIImage *)image didFinishSavingImageWithError:(NSError *)error contetInfo:(void *)contextinfo
+{
+    //エラーがあればメッセージ表示
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"エラー" message:@"写真の保存に失敗した" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+}
 @end
