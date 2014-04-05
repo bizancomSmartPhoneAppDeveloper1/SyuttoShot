@@ -153,7 +153,7 @@
             {
                 [UILabel beginAnimations:nil context:nil];
                 [UILabel setAnimationDuration:0.2];
-                self.syuttoView.center = CGPointMake(100, 54);
+                self.syuttoView.center = CGPointMake(115, 64);
                 [UILabel commitAnimations];
                 
                 self.Btnflag = YES;
@@ -162,7 +162,7 @@
             {
                 [UILabel beginAnimations:nil context:nil];
                 [UILabel setAnimationDuration:0.2];
-                self.syuttoView.center = CGPointMake(-46, 54);
+                self.syuttoView.center = CGPointMake(-20, 64);
                 [UILabel commitAnimations];
                 
                 self.Btnflag = NO;
