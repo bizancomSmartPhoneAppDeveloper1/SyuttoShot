@@ -235,7 +235,7 @@
 {
     time++;
     
-    if (time == 4)
+    if (time == 3)
     {
         [self camera];
         [timer invalidate];
