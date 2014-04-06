@@ -171,13 +171,13 @@
         case 1:
             if (self.Btnflag2 == NO)
             {
-                [self.secondBtn setTitle:@"10秒" forState:UIControlStateNormal];
+                [self.secondBtn setImage:[UIImage imageNamed:@"timer10.png"] forState:UIControlStateNormal];
                 
                 self.Btnflag2 = YES;
             }
             else if (self.Btnflag2 == YES)
             {
-                [self.secondBtn setTitle:@"4秒" forState:UIControlStateNormal];
+                [self.secondBtn setImage:[UIImage imageNamed:@"timer4.png"] forState:UIControlStateNormal];
                 
                 self.Btnflag2 = NO;
             }
@@ -185,7 +185,7 @@
         case 2:
             if (self.Btnflag3 == 0)
             {
-                [self.repeatBtn setTitle:@"1回" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeat1.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 2;
                 
@@ -193,7 +193,7 @@
             }
             else if (self.Btnflag3 == 1)
             {
-                [self.repeatBtn setTitle:@"2回" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeat2.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 3;
                 
@@ -201,7 +201,7 @@
             }
             else if (self.Btnflag3 == 2)
             {
-                [self.repeatBtn setTitle:@"なし" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeattx.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 1;
                 
@@ -228,7 +228,7 @@
 
 -(void)start2
 {
-    [self performSelector:@selector(start) withObject:nil afterDelay:5];
+    [self performSelector:@selector(start) withObject:nil afterDelay:6];
 }
 
 -(void)count
@@ -289,10 +289,17 @@
 
 -(void)onemore
 {
-    timer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                              target:self
-                                            selector:@selector(count2)
-                                            userInfo:nil repeats:YES];
+    if (self.Btnflag2 == YES)
+    {
+        [self start2];
+    }
+    else if (self.Btnflag2 == NO)
+    {
+        timer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(count2)
+                                                userInfo:nil repeats:YES];
+    }
 }
 
 -(void)count2
@@ -303,7 +310,6 @@
     {
         [self start];
         [timer2 invalidate];
-        
     }
 }
 @end
