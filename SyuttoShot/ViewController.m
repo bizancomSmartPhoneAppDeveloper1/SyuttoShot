@@ -64,6 +64,7 @@
     AVCaptureDevice *captureDevice = nil;
     NSArray *devices = [AVCaptureDevice devices];
     
+    
     //背面カメラを見つける
     for (AVCaptureDevice *device in devices) {
         if (device.position==AVCaptureDevicePositionBack)
@@ -75,6 +76,18 @@
         if (captureDevice == nil) {
             return  NO;
         }
+//    
+//    //デバイスにフラッシュ機能があるかどうか
+//        if () {
+//        
+//            [captureDevice isFlashModeSupported:AVCaptureFlashModeAuto];
+//        }
+//        else{
+//            //デバイスにフラッシュ機能がない場合)
+//            return NO;
+//        }
+
+    
         AVCaptureDeviceInput *deviceinput = [[AVCaptureDeviceInput alloc]initWithDevice:captureDevice error:&error];
         if (error) {
             return NO;
@@ -118,23 +131,6 @@
         [self start2];
     }
     
-
-//    AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-//    
-//    //静止画を撮影
-//    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection
-//                                                       completionHandler:^(CMSampleBufferRef
-//                                                                           imageDataSampleBuffer,NSError *error)
-//     {
-//         //エラーの場合
-//         if (error) {return;}
-//         
-//         NSData *imagedata = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-//         //画像のデータからUIImageを作成
-//         UIImage *image = [UIImage imageWithData:imagedata];
-//         //フォトライブラリに保存
-//         UIImageWriteToSavedPhotosAlbum(image,self,@selector(image:didFinishSavingImageWithError:contetInfo:), nil);
-//     }];
 }
 //フォトライブラリ保存時に呼ばれるメソッド
 -(void)image:(UIImage *)image didFinishSavingImageWithError:(NSError *)error contetInfo:(void *)contextinfo
