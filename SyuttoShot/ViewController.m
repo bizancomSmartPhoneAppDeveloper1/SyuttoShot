@@ -24,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // test
 	// Do any additional setup after loading the view, typically from a nib.
     
     time = 0; //タイマーの初期化
