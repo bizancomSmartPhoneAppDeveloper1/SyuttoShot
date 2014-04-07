@@ -51,8 +51,8 @@
         // iOS 7未満
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     }
-    AVCaptureDevice *device = [[AVCaptureDevice alloc]init];
-    [device setFlashMode:AVCaptureFlashModeAuto];
+
+   
 }
 
 // ステータスバーの非表示
