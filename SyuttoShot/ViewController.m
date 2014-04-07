@@ -110,8 +110,14 @@
     [self.session addOutput:self.stillImageOutput];
         
         //セッションの設定
-        [self.session startRunning];
+    [self.session startRunning];
+    
     [self.view bringSubviewToFront:self.syuttoView];
+    
+    [captureDevice lockForConfiguration:nil];
+    captureDevice.focusMode = AVCaptureFlashModeOn;
+    [captureDevice unlockForConfiguration];
+    
     
         return YES;
 
@@ -137,22 +143,6 @@
     }
     
 
-//    AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-//    
-//    //静止画を撮影
-//    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection
-//                                                       completionHandler:^(CMSampleBufferRef
-//                                                                           imageDataSampleBuffer,NSError *error)
-//     {
-//         //エラーの場合
-//         if (error) {return;}
-//         
-//         NSData *imagedata = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-//         //画像のデータからUIImageを作成
-//         UIImage *image = [UIImage imageWithData:imagedata];
-//         //フォトライブラリに保存
-//         UIImageWriteToSavedPhotosAlbum(image,self,@selector(image:didFinishSavingImageWithError:contetInfo:), nil);
-//     }];
 }
 //フォトライブラリ保存時に呼ばれるメソッド
 -(void)image:(UIImage *)image didFinishSavingImageWithError:(NSError *)error contetInfo:(void *)contextinfo
@@ -269,17 +259,20 @@
 
 -(void)camera //写真を撮る
 {
+        AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     
-    AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
-    [device setFlashMode:AVCaptureFlashModeAuto];
+
     
     //静止画を撮影
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection
                                                        completionHandler:^(CMSampleBufferRef
                                                                            imageDataSampleBuffer,NSError *error)
+     
+    
+     
      {
+
          //エラーの場合
          if (error) {return;}
          
