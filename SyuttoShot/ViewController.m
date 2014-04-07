@@ -42,8 +42,6 @@
     
     [self.syuttoView bringSubviewToFront:self.view];
     
-    //[UIApplication sharedApplication].statusBarHidden	= YES;
-    
     // ステータスバーの表示/非表示メソッド呼び出し
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // iOS 7以降
