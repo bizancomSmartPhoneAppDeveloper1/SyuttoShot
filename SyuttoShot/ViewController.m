@@ -26,10 +26,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    time = 0;
-    repeatcount = 1;
+    time = 0; //タイマーの初期化
+    repeatcount = 1; //リピート回数の初期化
     
-    self.Btnflag = NO;
+    self.Btnflag = NO; //ボタンの初期化
     self.Btnflag2 = NO;
     self.Btnflag3 = 0;
     
@@ -37,8 +37,10 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     self.countdown = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     
+    self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    
+    [self.syuttoView bringSubviewToFront:self.view];
 }
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -118,11 +120,11 @@
 //カメラボタン押時
 - (IBAction)startCamera:(id)sender {
     
-    if (self.Btnflag2 == NO)
+    if (self.Btnflag2 == NO) //セルフタイマーが４秒の時
     {
         [self start];
     }
-    else if (self.Btnflag2 == YES)
+    else if (self.Btnflag2 == YES) //セルフタイマーが１０秒の時
     {
         [self start2];
     }
@@ -140,16 +142,16 @@
 }
 
 
-- (IBAction)tapMenuBtn:(UIButton *)sender {
+- (IBAction)tapMenuBtn:(UIButton *)sender { //メニューボタンを押した時
     
     switch (sender.tag)
     {
-        case 0:
+        case 0: //メニューボタンを押すと、メニューバーがシュッと出たり入ったりする
             if (self.Btnflag == NO)
             {
                 [UILabel beginAnimations:nil context:nil];
                 [UILabel setAnimationDuration:0.2];
-                self.syuttoView.center = CGPointMake(100, 54);
+                self.syuttoView.center = CGPointMake(115, 64);
                 [UILabel commitAnimations];
                 
                 self.Btnflag = YES;
@@ -158,30 +160,30 @@
             {
                 [UILabel beginAnimations:nil context:nil];
                 [UILabel setAnimationDuration:0.2];
-                self.syuttoView.center = CGPointMake(-46, 54);
+                self.syuttoView.center = CGPointMake(-20, 64);
                 [UILabel commitAnimations];
                 
                 self.Btnflag = NO;
             }
             break;
-        case 1:
+        case 1: //セルフタイマーボタンを押すと、セルフタイマーの秒数が変わる
             if (self.Btnflag2 == NO)
             {
-                [self.secondBtn setTitle:@"10秒" forState:UIControlStateNormal];
+                [self.secondBtn setImage:[UIImage imageNamed:@"timer10.png"] forState:UIControlStateNormal];
                 
                 self.Btnflag2 = YES;
             }
             else if (self.Btnflag2 == YES)
             {
-                [self.secondBtn setTitle:@"4秒" forState:UIControlStateNormal];
+                [self.secondBtn setImage:[UIImage imageNamed:@"timer4.png"] forState:UIControlStateNormal];
                 
                 self.Btnflag2 = NO;
             }
             break;
-        case 2:
+        case 2: //リピートボタンを押すと、リピート回数が変わる
             if (self.Btnflag3 == 0)
             {
-                [self.repeatBtn setTitle:@"1回" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeat1.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 2;
                 
@@ -189,7 +191,7 @@
             }
             else if (self.Btnflag3 == 1)
             {
-                [self.repeatBtn setTitle:@"2回" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeat2.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 3;
                 
@@ -197,7 +199,7 @@
             }
             else if (self.Btnflag3 == 2)
             {
-                [self.repeatBtn setTitle:@"なし" forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeattx.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 1;
                 
@@ -211,7 +213,7 @@
 }
 
 
--(void)start
+-(void)start //カウントダウンの音声を流す
 {
     [self.countdown play];
     
@@ -222,12 +224,12 @@
                                             repeats:YES];
 }
 
--(void)start2
+-(void)start2 //セルフタイマーが１０秒なので、カウントダウン音声を6秒後呼び出す
 {
-    [self performSelector:@selector(start) withObject:nil afterDelay:5];
+    [self performSelector:@selector(start) withObject:nil afterDelay:6];
 }
 
--(void)count
+-(void)count //timerが呼び出すメソッド
 {
     time++;
     
@@ -241,7 +243,7 @@
 
 
 
--(void)camera
+-(void)camera //写真を撮る
 {
     
     AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
@@ -261,11 +263,11 @@
          UIImageWriteToSavedPhotosAlbum(image,self,@selector(image:didFinishSavingImageWithError:contetInfo:), nil);
      }];
     
-    time = 0;
+    time = 0; //タイマーを初期化する
     aida = 0;
     repeatcount--;
     
-    if (repeatcount > 0)
+    if (repeatcount > 0) //リピート回数が０以外なら繰り返す。
     {
         [self onemore];
     }
@@ -283,15 +285,22 @@
     }
 }
 
--(void)onemore
+-(void)onemore //繰り返す
 {
-    timer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                              target:self
-                                            selector:@selector(count2)
-                                            userInfo:nil repeats:YES];
+    if (self.Btnflag2 == YES) //10秒タイマーなら即タイマー発動
+    {
+        [self start2];
+    }
+    else if (self.Btnflag2 == NO) //4秒タイマーなら２秒後にタイマー発動
+    {
+        timer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(count2)
+                                                userInfo:nil repeats:YES];
+    }
 }
 
--(void)count2
+-(void)count2 //timer2が呼ぶメソッド
 {
     aida++;
     
@@ -299,7 +308,6 @@
     {
         [self start];
         [timer2 invalidate];
-        
     }
 }
 @end

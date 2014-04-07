@@ -17,9 +17,9 @@
 
 @property AVAudioPlayer *countdown;
 
-@property BOOL Btnflag;
-@property BOOL Btnflag2;
-@property int Btnflag3;
+@property BOOL Btnflag; //メニューボタンが押されたかどうか
+@property BOOL Btnflag2; //タイマーボタンが何回押されたかどうか
+@property int Btnflag3; //繰り返しボタンが何回押されたかどうか
 
 
 - (IBAction)startCamera:(id)sender;
