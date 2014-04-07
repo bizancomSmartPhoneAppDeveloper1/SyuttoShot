@@ -38,7 +38,7 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     self.countdown = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     
-    self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:0.961 green:1.0 blue:0.9 alpha:0.3];
     
     [self.syuttoView bringSubviewToFront:self.view];
 }
