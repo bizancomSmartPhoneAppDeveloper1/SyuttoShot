@@ -115,7 +115,7 @@
     [self.view bringSubviewToFront:self.syuttoView];
     
     [captureDevice lockForConfiguration:nil];
-    captureDevice.focusMode = AVCaptureFlashModeOn;
+    captureDevice.focusMode = AVCaptureFlashModeAuto;
     [captureDevice unlockForConfiguration];
     
     
