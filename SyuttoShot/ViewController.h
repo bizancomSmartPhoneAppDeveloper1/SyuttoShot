@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-//追加したフレームワーク　AVFoundation.framework CoreVideo.framework CoreMedia.framework QuartzCore.framework MobileCoreService.framework
 
-@interface ViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface ViewController : UIViewController
 
-@property (strong, nonatomic) AVCaptureSession *session;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIView *syuttoView;
+@property (weak, nonatomic) IBOutlet UIButton *secondBtn;
+@property (weak, nonatomic) IBOutlet UIButton *repeatBtn;
+
+@property AVAudioPlayer *countdown;
+
+@property BOOL Btnflag; //メニューボタンが押されたかどうか
+@property BOOL Btnflag2; //タイマーボタンが何回押されたかどうか
+@property int Btnflag3; //繰り返しボタンが何回押されたかどうか
+
+
+- (IBAction)startCamera:(id)sender;
+- (IBAction)tapMenuBtn:(UIButton *)sender;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1896683118EE839800D73F8E /* 3-0_02_CUT.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1896683018EE839800D73F8E /* 3-0_02_CUT.wav */; };
 		18BEF92318EC139C006175C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF92218EC139C006175C9 /* Foundation.framework */; };
 		18BEF92518EC139C006175C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF92418EC139C006175C9 /* CoreGraphics.framework */; };
 		18BEF92718EC139C006175C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF92618EC139C006175C9 /* UIKit.framework */; };
@@ -22,10 +23,12 @@
 		18BEF94C18EC139C006175C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF94A18EC139C006175C9 /* InfoPlist.strings */; };
 		18BEF94E18EC139C006175C9 /* SyuttoShotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF94D18EC139C006175C9 /* SyuttoShotTests.m */; };
 		18BEF95818EC1467006175C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95718EC1467006175C9 /* AVFoundation.framework */; };
-		18BEF95A18EC1475006175C9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95918EC1475006175C9 /* CoreVideo.framework */; };
-		18BEF95C18EC1481006175C9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95B18EC1481006175C9 /* CoreMedia.framework */; };
-		18BEF95E18EC1496006175C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95D18EC1496006175C9 /* QuartzCore.framework */; };
-		18BEF96018EC14AA006175C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95F18EC14AA006175C9 /* MobileCoreServices.framework */; };
+		F6553AC518EFD2F4002C3D61 /* ifn0183.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC418EFD2F4002C3D61 /* ifn0183.png */; };
+		F6553AC718EFD2FC002C3D61 /* repeat1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC618EFD2FC002C3D61 /* repeat1.png */; };
+		F6553AC918EFD302002C3D61 /* repeat2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC818EFD302002C3D61 /* repeat2.png */; };
+		F6553ACB18EFD309002C3D61 /* repeatx.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACA18EFD309002C3D61 /* repeatx.png */; };
+		F6553ACD18EFD310002C3D61 /* timer4.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACC18EFD310002C3D61 /* timer4.png */; };
+		F6553ACF18EFD318002C3D61 /* timer10.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACE18EFD318002C3D61 /* timer10.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1896683018EE839800D73F8E /* 3-0_02_CUT.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "3-0_02_CUT.wav"; sourceTree = "<group>"; };
 		18BEF91F18EC139C006175C9 /* SyuttoShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyuttoShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BEF92218EC139C006175C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18BEF92418EC139C006175C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +67,12 @@
 		18BEF95B18EC1481006175C9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18BEF95D18EC1496006175C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		18BEF95F18EC14AA006175C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F6553AC418EFD2F4002C3D61 /* ifn0183.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ifn0183.png; sourceTree = "<group>"; };
+		F6553AC618EFD2FC002C3D61 /* repeat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat1.png; sourceTree = "<group>"; };
+		F6553AC818EFD302002C3D61 /* repeat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat2.png; sourceTree = "<group>"; };
+		F6553ACA18EFD309002C3D61 /* repeatx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatx.png; sourceTree = "<group>"; };
+		F6553ACC18EFD310002C3D61 /* timer4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer4.png; sourceTree = "<group>"; };
+		F6553ACE18EFD318002C3D61 /* timer10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer10.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BEF96018EC14AA006175C9 /* MobileCoreServices.framework in Frameworks */,
-				18BEF95E18EC1496006175C9 /* QuartzCore.framework in Frameworks */,
-				18BEF95C18EC1481006175C9 /* CoreMedia.framework in Frameworks */,
-				18BEF95A18EC1475006175C9 /* CoreVideo.framework in Frameworks */,
 				18BEF95818EC1467006175C9 /* AVFoundation.framework in Frameworks */,
 				18BEF92518EC139C006175C9 /* CoreGraphics.framework in Frameworks */,
 				18BEF92718EC139C006175C9 /* UIKit.framework in Frameworks */,
@@ -146,6 +152,13 @@
 		18BEF92918EC139C006175C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6553ACA18EFD309002C3D61 /* repeatx.png */,
+				F6553AC818EFD302002C3D61 /* repeat2.png */,
+				F6553AC618EFD2FC002C3D61 /* repeat1.png */,
+				F6553ACC18EFD310002C3D61 /* timer4.png */,
+				F6553ACE18EFD318002C3D61 /* timer10.png */,
+				F6553AC418EFD2F4002C3D61 /* ifn0183.png */,
+				1896683018EE839800D73F8E /* 3-0_02_CUT.wav */,
 				18BEF92A18EC139C006175C9 /* SyuttoShot-Info.plist */,
 				18BEF92B18EC139C006175C9 /* InfoPlist.strings */,
 				18BEF92E18EC139C006175C9 /* main.m */,
@@ -219,6 +232,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					18BEF91E18EC139C006175C9 = {
+						DevelopmentTeam = F6V5S453ZH;
+					};
 					18BEF93F18EC139C006175C9 = {
 						TestTargetID = 18BEF91E18EC139C006175C9;
 					};
@@ -250,7 +266,14 @@
 			files = (
 				18BEF93B18EC139C006175C9 /* Images.xcassets in Resources */,
 				18BEF92D18EC139C006175C9 /* InfoPlist.strings in Resources */,
+				F6553ACD18EFD310002C3D61 /* timer4.png in Resources */,
+				F6553AC918EFD302002C3D61 /* repeat2.png in Resources */,
+				F6553AC718EFD2FC002C3D61 /* repeat1.png in Resources */,
+				F6553AC518EFD2F4002C3D61 /* ifn0183.png in Resources */,
+				F6553ACF18EFD318002C3D61 /* timer10.png in Resources */,
+				1896683118EE839800D73F8E /* 3-0_02_CUT.wav in Resources */,
 				18BEF93618EC139C006175C9 /* Main.storyboard in Resources */,
+				F6553ACB18EFD309002C3D61 /* repeatx.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyuttoShot/SyuttoShot-Prefix.pch";
 				INFOPLIST_FILE = "SyuttoShot/SyuttoShot-Info.plist";
@@ -409,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyuttoShot/SyuttoShot-Prefix.pch";
 				INFOPLIST_FILE = "SyuttoShot/SyuttoShot-Info.plist";
@@ -476,6 +501,7 @@
 				18BEF95318EC139C006175C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BEF95418EC139C006175C9 /* Build configuration list for PBXNativeTarget "SyuttoShotTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +510,7 @@
 				18BEF95618EC139C006175C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
