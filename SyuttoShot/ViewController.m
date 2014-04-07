@@ -105,7 +105,8 @@
         
         //セッションの設定
         [self.session startRunning];
-
+    [self.view bringSubviewToFront:self.syuttoView];
+    
         return YES;
 
 }
