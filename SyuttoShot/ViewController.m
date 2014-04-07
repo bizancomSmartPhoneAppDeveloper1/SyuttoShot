@@ -51,6 +51,8 @@
         // iOS 7未満
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     }
+    AVCaptureDevice *device = [[AVCaptureDevice alloc]init];
+    [device setFlashMode:AVCaptureFlashModeAuto];
 }
 
 // ステータスバーの非表示
@@ -269,6 +271,9 @@
 {
     
     AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    [device setFlashMode:AVCaptureFlashModeAuto];
     
     //静止画を撮影
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection
