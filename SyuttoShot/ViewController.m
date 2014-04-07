@@ -41,6 +41,8 @@
     self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:0.961 green:1.0 blue:0.9 alpha:0.3];
     
     [self.syuttoView bringSubviewToFront:self.view];
+    
+    [UIApplication sharedApplication].statusBarHidden	= YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated
