@@ -39,8 +39,8 @@
     
     self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     
+    [self.syuttoView bringSubviewToFront:self.view];
 }
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -92,7 +92,8 @@
         
         //セッションの設定
         [self.session startRunning];
-        
+    [self.view bringSubviewToFront:self.syuttoView];
+    
         return YES;
 
 }
