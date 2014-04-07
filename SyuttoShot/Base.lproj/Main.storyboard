@@ -82,6 +82,8 @@
                             </toolbar>
                         </subviews>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="repeatBtn" destination="gLK-YQ-ljj" id="xXh-WH-SNc"/>
                         <outlet property="secondBtn" destination="EJ6-6h-aHA" id="EQC-qp-m3c"/>
