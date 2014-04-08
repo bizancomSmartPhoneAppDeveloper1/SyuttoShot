@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *repeatBtn;
 
 @property AVAudioPlayer *countdown;
+@property AVAudioPlayer *end;
 
 @property BOOL Btnflag; //メニューボタンが押されたかどうか
 @property BOOL Btnflag2; //タイマーボタンが何回押されたかどうか

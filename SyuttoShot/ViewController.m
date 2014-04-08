@@ -38,6 +38,11 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     self.countdown = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"arigatougozaimashita_01-2" ofType:@"wav"];
+    NSURL *url2 = [NSURL fileURLWithPath:path2];
+    self.countdown = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:NULL];
+
+    
     self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:0.961 green:1.0 blue:0.9 alpha:0.3];
     
     [self.syuttoView bringSubviewToFront:self.view];
@@ -294,14 +299,17 @@
     }
     else if (repeatcount == 0 && self.Btnflag3 == 0)
     {
+        [self.end play];
         repeatcount = 1;
     }
     else if (repeatcount == 0 && self.Btnflag3 == 1)
     {
+        [self.end play];
         repeatcount = 2;
     }
     else if (repeatcount == 0 && self.Btnflag3 == 2)
     {
+        [self.end play];
         repeatcount = 3;
     }
 }

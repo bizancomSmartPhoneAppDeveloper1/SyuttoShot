@@ -23,6 +23,7 @@
 		18BEF94C18EC139C006175C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF94A18EC139C006175C9 /* InfoPlist.strings */; };
 		18BEF94E18EC139C006175C9 /* SyuttoShotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF94D18EC139C006175C9 /* SyuttoShotTests.m */; };
 		18BEF95818EC1467006175C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BEF95718EC1467006175C9 /* AVFoundation.framework */; };
+		F63B982418F39841000ED7FC /* arigatougozaimashita_01-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F63B982318F39841000ED7FC /* arigatougozaimashita_01-2.wav */; };
 		F6553AC518EFD2F4002C3D61 /* ifn0183.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC418EFD2F4002C3D61 /* ifn0183.png */; };
 		F6553AC718EFD2FC002C3D61 /* repeat1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC618EFD2FC002C3D61 /* repeat1.png */; };
 		F6553AC918EFD302002C3D61 /* repeat2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553AC818EFD302002C3D61 /* repeat2.png */; };
@@ -67,6 +68,7 @@
 		18BEF95B18EC1481006175C9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18BEF95D18EC1496006175C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		18BEF95F18EC14AA006175C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F63B982318F39841000ED7FC /* arigatougozaimashita_01-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "arigatougozaimashita_01-2.wav"; sourceTree = "<group>"; };
 		F6553AC418EFD2F4002C3D61 /* ifn0183.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ifn0183.png; sourceTree = "<group>"; };
 		F6553AC618EFD2FC002C3D61 /* repeat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat1.png; sourceTree = "<group>"; };
 		F6553AC818EFD302002C3D61 /* repeat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat2.png; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				F6553ACC18EFD310002C3D61 /* timer4.png */,
 				F6553ACE18EFD318002C3D61 /* timer10.png */,
 				F6553AC418EFD2F4002C3D61 /* ifn0183.png */,
+				F63B982318F39841000ED7FC /* arigatougozaimashita_01-2.wav */,
 				1896683018EE839800D73F8E /* 3-0_02_CUT.wav */,
 				18BEF92A18EC139C006175C9 /* SyuttoShot-Info.plist */,
 				18BEF92B18EC139C006175C9 /* InfoPlist.strings */,
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63B982418F39841000ED7FC /* arigatougozaimashita_01-2.wav in Resources */,
 				18BEF93B18EC139C006175C9 /* Images.xcassets in Resources */,
 				18BEF92D18EC139C006175C9 /* InfoPlist.strings in Resources */,
 				F6553ACD18EFD310002C3D61 /* timer4.png in Resources */,
