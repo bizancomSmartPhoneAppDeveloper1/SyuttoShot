@@ -108,15 +108,16 @@
     self.session.sessionPreset = AVCaptureSessionPresetPhoto;
     [self.session addInput:deviceinput];
     [self.session addOutput:self.stillImageOutput];
-        
+    
+    [captureDevice lockForConfiguration:nil];
+    captureDevice.torchMode = AVCaptureFlashModeAuto;
+    [captureDevice unlockForConfiguration];
+
         //セッションの設定
     [self.session startRunning];
     
     [self.view bringSubviewToFront:self.syuttoView];
     
-    [captureDevice lockForConfiguration:nil];
-    captureDevice.torchMode = AVCaptureFlashModeAuto;
-    [captureDevice unlockForConfiguration];
     
     
         return YES;
