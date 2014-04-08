@@ -219,7 +219,7 @@
             }
             else if (self.Btnflag3 == 2)
             {
-                [self.repeatBtn setImage:[UIImage imageNamed:@"repeattx.png"] forState:UIControlStateNormal];
+                [self.repeatBtn setImage:[UIImage imageNamed:@"repeatx.png"] forState:UIControlStateNormal];
                 
                 repeatcount = 1;
                 
