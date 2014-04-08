@@ -109,10 +109,10 @@
     [self.session addInput:deviceinput];
     [self.session addOutput:self.stillImageOutput];
     
-    [captureDevice lockForConfiguration:nil];
-    captureDevice.torchMode = AVCaptureFlashModeAuto;
-    [captureDevice unlockForConfiguration];
-
+//    [captureDevice lockForConfiguration:nil];
+//    captureDevice.torchMode = AVCaptureFlashModeAuto;
+//    [captureDevice unlockForConfiguration];
+//
         //セッションの設定
     [self.session startRunning];
     
