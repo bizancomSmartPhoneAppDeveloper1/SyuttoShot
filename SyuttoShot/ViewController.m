@@ -291,27 +291,9 @@
     
     time = 0; //タイマーを初期化する
     aida = 0;
-    repeatcount--;
     
-    if (repeatcount > 0) //リピート回数が０以外なら繰り返す。
-    {
-        [self onemore];
-    }
-    else if (repeatcount == 0 && self.Btnflag3 == 0)
-    {
-        [self.end play];
-        repeatcount = 1;
-    }
-    else if (repeatcount == 0 && self.Btnflag3 == 1)
-    {
-        [self.end play];
-        repeatcount = 2;
-    }
-    else if (repeatcount == 0 && self.Btnflag3 == 2)
-    {
-        [self.end play];
-        repeatcount = 3;
-    }
+     [self performSelector:@selector(endorrepeat) withObject:nil afterDelay:1];
+    
 }
 
 -(void)onemore //繰り返す
@@ -337,6 +319,31 @@
     {
         [self start];
         [timer2 invalidate];
+    }
+}
+
+-(void)endorrepeat
+{
+    repeatcount--;
+    
+    if (repeatcount > 0) //リピート回数が０以外なら繰り返す。
+    {
+        [self onemore];
+    }
+    else if (repeatcount == 0 && self.Btnflag3 == 0)
+    {
+        [self.end play];
+        repeatcount = 1;
+    }
+    else if (repeatcount == 0 && self.Btnflag3 == 1)
+    {
+        [self.end play];
+        repeatcount = 2;
+    }
+    else if (repeatcount == 0 && self.Btnflag3 == 2)
+    {
+        [self.end play];
+        repeatcount = 3;
     }
 }
 @end
