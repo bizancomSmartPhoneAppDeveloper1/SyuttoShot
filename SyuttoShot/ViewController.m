@@ -27,6 +27,8 @@
     // test
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self configureCamera];
+    
     time = 0; //タイマーの初期化
     repeatcount = 1; //リピート回数の初期化
     
@@ -42,11 +44,6 @@
     NSURL *url2 = [NSURL fileURLWithPath:path2];
     self.end = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:NULL];
 
-    
-    self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:0.961 green:1.0 blue:0.9 alpha:0.3];
-    
-    [self.syuttoView bringSubviewToFront:self.view];
-    
     // ステータスバーの表示/非表示メソッド呼び出し
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // iOS 7以降
@@ -69,7 +66,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self configureCamera];
+   
 }
 
 //カメラの設定
@@ -114,21 +111,31 @@
     [self.session addInput:deviceinput];
     [self.session addOutput:self.stillImageOutput];
     
-//    [captureDevice lockForConfiguration:nil];
-//    captureDevice.torchMode = AVCaptureFlashModeAuto;
-//    [captureDevice unlockForConfiguration];
-//
         //セッションの設定
     [self.session startRunning];
     
+    self.syuttoView.backgroundColor = [[UIColor alloc] initWithRed:0.961 green:1.0 blue:0.9 alpha:0.3];
+    
     [self.view bringSubviewToFront:self.syuttoView];
     
-    
+    [self button];
     
         return YES;
 
 }
 
+-(void)button
+{
+    //スクリーンサイズの取得
+    CGRect screenSize = [[UIScreen mainScreen] bounds];
+    CGFloat width = screenSize.size.width;
+    CGFloat height = screenSize.size.height;
+    
+    self.buttonView.center = CGPointMake(width/2, height-80);
+    
+    [self.view bringSubviewToFront:self.buttonView];
+
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -136,20 +143,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//カメラボタン押時
-- (IBAction)startCamera:(id)sender {
-    
-    if (self.Btnflag2 == NO) //セルフタイマーが４秒の時
-    {
-        [self start];
-    }
-    else if (self.Btnflag2 == YES) //セルフタイマーが１０秒の時
-    {
-        [self start2];
-    }
-    
-
-}
 //フォトライブラリ保存時に呼ばれるメソッド
 -(void)image:(UIImage *)image didFinishSavingImageWithError:(NSError *)error contetInfo:(void *)contextinfo
 {
@@ -161,6 +154,19 @@
     
 }
 
+//カメラボタン押時
+- (IBAction)tapCameraBtn:(UIButton *)sender
+{
+    if (self.Btnflag2 == NO) //セルフタイマーが４秒の時
+    {
+        [self start];
+    }
+    else if (self.Btnflag2 == YES) //セルフタイマーが１０秒の時
+    {
+        [self start2];
+    }
+    
+}
 
 - (IBAction)tapMenuBtn:(UIButton *)sender { //メニューボタンを押した時
     

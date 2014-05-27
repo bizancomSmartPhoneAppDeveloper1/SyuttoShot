@@ -30,6 +30,8 @@
 		F6553ACB18EFD309002C3D61 /* repeatx.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACA18EFD309002C3D61 /* repeatx.png */; };
 		F6553ACD18EFD310002C3D61 /* timer4.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACC18EFD310002C3D61 /* timer4.png */; };
 		F6553ACF18EFD318002C3D61 /* timer10.png in Resources */ = {isa = PBXBuildFile; fileRef = F6553ACE18EFD318002C3D61 /* timer10.png */; };
+		F6CCF925193323BD001F7433 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6CCF924193323BD001F7433 /* 1.png */; };
+		F6CCF92719338200001F7433 /* kamera2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6CCF926193381FF001F7433 /* kamera2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		F6553ACA18EFD309002C3D61 /* repeatx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatx.png; sourceTree = "<group>"; };
 		F6553ACC18EFD310002C3D61 /* timer4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer4.png; sourceTree = "<group>"; };
 		F6553ACE18EFD318002C3D61 /* timer10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer10.png; sourceTree = "<group>"; };
+		F6CCF924193323BD001F7433 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		F6CCF926193381FF001F7433 /* kamera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kamera2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 				F6553ACE18EFD318002C3D61 /* timer10.png */,
 				F6553AC418EFD2F4002C3D61 /* ifn0183.png */,
 				F63B982318F39841000ED7FC /* arigatougozaimashita_01-2.wav */,
+				F6CCF926193381FF001F7433 /* kamera2.png */,
+				F6CCF924193323BD001F7433 /* 1.png */,
 				1896683018EE839800D73F8E /* 3-0_02_CUT.wav */,
 				18BEF92A18EC139C006175C9 /* SyuttoShot-Info.plist */,
 				18BEF92B18EC139C006175C9 /* InfoPlist.strings */,
@@ -270,12 +276,14 @@
 				F63B982418F39841000ED7FC /* arigatougozaimashita_01-2.wav in Resources */,
 				18BEF93B18EC139C006175C9 /* Images.xcassets in Resources */,
 				18BEF92D18EC139C006175C9 /* InfoPlist.strings in Resources */,
+				F6CCF92719338200001F7433 /* kamera2.png in Resources */,
 				F6553ACD18EFD310002C3D61 /* timer4.png in Resources */,
 				F6553AC918EFD302002C3D61 /* repeat2.png in Resources */,
 				F6553AC718EFD2FC002C3D61 /* repeat1.png in Resources */,
 				F6553AC518EFD2F4002C3D61 /* ifn0183.png in Resources */,
 				F6553ACF18EFD318002C3D61 /* timer10.png in Resources */,
 				1896683118EE839800D73F8E /* 3-0_02_CUT.wav in Resources */,
+				F6CCF925193323BD001F7433 /* 1.png in Resources */,
 				18BEF93618EC139C006175C9 /* Main.storyboard in Resources */,
 				F6553ACB18EFD309002C3D61 /* repeatx.png in Resources */,
 			);
