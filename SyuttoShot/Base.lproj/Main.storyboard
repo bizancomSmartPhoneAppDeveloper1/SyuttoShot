@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -11,6 +11,23 @@
                     <view key="view" opaque="NO" contentMode="scaleAspectFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="aCx-1z-o4Z">
+                                <rect key="frame" x="107" y="227" width="99" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vYc-4I-KBX">
+                                        <rect key="frame" x="-27" y="0.0" width="155" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="kamera2.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCameraBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CqO-ZT-XnQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="Npg-Dl-Hx9">
                                 <rect key="frame" x="-127" y="0.0" width="189" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,24 +84,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LXP-Wi-qzi">
-                                <rect key="frame" x="0.0" y="410" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="flexibleSpace" id="MqJ-XJ-NJo"/>
-                                    <barButtonItem systemItem="camera" id="A7p-Zs-Ddm">
-                                        <connections>
-                                            <action selector="startCamera:" destination="vXZ-lx-hvc" id="WZu-zG-srz"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="hJj-iK-0Kb"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="buttonView" destination="aCx-1z-o4Z" id="f7J-f1-rAj"/>
+                        <outlet property="cameraBtn" destination="vYc-4I-KBX" id="7fh-Xv-z55"/>
                         <outlet property="repeatBtn" destination="gLK-YQ-ljj" id="xXh-WH-SNc"/>
                         <outlet property="secondBtn" destination="EJ6-6h-aHA" id="EQC-qp-m3c"/>
                         <outlet property="syuttoView" destination="Npg-Dl-Hx9" id="Jhp-gZ-Jwh"/>
@@ -97,6 +103,7 @@
     </scenes>
     <resources>
         <image name="ifn0183.png" width="100" height="80"/>
+        <image name="kamera2.png" width="100" height="100"/>
         <image name="repeatx.png" width="502" height="502"/>
         <image name="timer4.png" width="381" height="429"/>
     </resources>

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIView *syuttoView;
 @property (weak, nonatomic) IBOutlet UIButton *secondBtn;
 @property (weak, nonatomic) IBOutlet UIButton *repeatBtn;
+@property (strong, nonatomic) IBOutlet UIView *buttonView;
 
 @property AVAudioPlayer *countdown;
 @property AVAudioPlayer *end;
@@ -21,9 +22,11 @@
 @property BOOL Btnflag; //メニューボタンが押されたかどうか
 @property BOOL Btnflag2; //タイマーボタンが何回押されたかどうか
 @property int Btnflag3; //繰り返しボタンが何回押されたかどうか
+@property (strong, nonatomic) IBOutlet UIButton *cameraBtn;
 
 
-- (IBAction)startCamera:(id)sender;
+- (IBAction)tapCameraBtn:(UIButton *)sender;
+
 - (IBAction)tapMenuBtn:(UIButton *)sender;
 
 @end
